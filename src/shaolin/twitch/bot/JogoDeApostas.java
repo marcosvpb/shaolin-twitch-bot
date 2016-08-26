@@ -31,11 +31,12 @@ public class JogoDeApostas {
     }
 
     public boolean addVitoria(String username, long pts) {
+    	bool vitoria = false;
         if (Config.usuarios.containsKey(username) && Config.usuarios.get(username) >= pts) {
             addAposta(username, pts, true);
-            return true;
+            vitoria = true;
         }
-        return false;
+        return vitoria;
     }
 
     public Aposta getAposta(String username) {
